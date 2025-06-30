@@ -40,10 +40,10 @@ jobs:
 
       - name: Executar testes Robot
         run: |
-          robot --outputdir logs test/api 
+          robot -d results test/api 
 
       - name: Publicar Relatórios como Artefatos
         uses: actions/upload-artifact@v3
         with:
           name: robot-test-results
-          path: logs
+          path: results
