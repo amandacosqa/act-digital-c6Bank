@@ -6,9 +6,4 @@ Library    Collections
 Library    JSONLibrary
 
 *** Variables ***
-${base_url}    https://dog.ceo/api
-
-#endpoints
-${getListAllBreeds}    /breeds/list/all
-${getBreedImage}    /breed/${breed}/images
-${getBreedImageRandom}    /breeds/image/random         
+${base_url}    https://dog.ceo/api       

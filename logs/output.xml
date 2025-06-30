@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.0 on darwin)" generated="2025-06-30T00:59:15.023558" rpa="false" schemaversion="5">
+<suite id="s1" name="Api" source="/Users/amandaoliveira/Documents/Github/act-digital-c6Bank/test/api">
+<suite id="s1-s1" name="getAllBreeds" source="/Users/amandaoliveira/Documents/Github/act-digital-c6Bank/test/api/getAllBreeds.robot">
+<test id="s1-s1-t1" name="Cenário 1: Listar todas as raças de cachorro cadastradas na Dog API" line="8">
+<kw name="Dado que uma api fornece informações sobre raças de cachorro" owner="givenSteps" source_name="${gherkin} que uma api fornece informações sobre raças de cachorro">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.142817" level="INFO">${statusCode} = 200</msg>
+<var>${statusCode}</var>
+<arg>200</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.142747" elapsed="0.000085"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.142985" level="INFO">${base_url} = https://dog.ceo/api</msg>
+<arg>${base_url}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.142897" elapsed="0.000105"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.143116" level="INFO">${statusCode} = 200</msg>
+<arg>${statusCode}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.143049" elapsed="0.000080"/>
+</kw>
+<status status="PASS" start="2025-06-30T00:59:15.142418" elapsed="0.000735"/>
+</kw>
+<kw name="Quando a chamada ao endpoint /breeds/list/all for realizada" owner="whenSteps" source_name="${gherkin} chamada ao endpoint /breeds/list/all for realizada">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-30T00:59:15.143468" level="INFO">Creating Session using : alias=dog_api, url=https://dog.ceo/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>dog_api</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-30T00:59:15.143338" elapsed="0.000232"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-06-30T00:59:15.697866" level="INFO">GET Request : url=https://dog.ceo/api/breeds/list/all 
+ path_url=/api/breeds/list/all 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-30T00:59:15.698518" level="INFO">GET Response : url=https://dog.ceo/api/breeds/list/all 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 30 Jun 2025 03:59:15 GMT', 'Content-Type': 'application/json', 'Content-Length': '1035', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'X-Powered-By': 'PHP/8.1.32', 'Access-Control-Allow-Origin': '*', 'Content-Encoding': 'gzip', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'Cache-Control': 'max-age=1800', 'X-Cache-Age': '851', 'X-Cache-Hits': '520', 'X-Cache': 'HIT', 'Accept-Ranges': 'bytes', 'Age': '0', 'Vary': 'Accept-Encoding', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Cf-Cache-Status': 'DYNAMIC', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=vfwqQ0aJtx0IpXYj1vXRsbew26mRi8sxbPqX3Ls7P1d8%2FJ4H%2BFY6LKEF3wQmW%2FyCJhxiJRSiqinFSm7%2FSAzYJnRQ0hNpA4c%3D"}]}', 'CF-RAY': '957abff8dbefe126-GIG', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"message":{"affenpinscher":[],"african":[],"airedale":[],"akita":[],"appenzeller":[],"australian":["kelpie","shepherd"],"bakharwal":["indian"],"basenji":[],"beagle":[],"bluetick":[],"borzoi":[],"bouvier":[],"boxer":[],"brabancon":[],"briard":[],"buhund":["norwegian"],"bulldog":["boston","english","french"],"bullterrier":["staffordshire"],"cattledog":["australian"],"cavapoo":[],"chihuahua":[],"chippiparai":["indian"],"chow":[],"clumber":[],"cockapoo":[],"collie":["border"],"coonhound":[],"corgi":["cardigan"],"cotondetulear":[],"dachshund":[],"dalmatian":[],"dane":["great"],"danish":["swedish"],"deerhound":["scottish"],"dhole":[],"dingo":[],"doberman":[],"elkhound":["norwegian"],"entlebucher":[],"eskimo":[],"finnish":["lapphund"],"frise":["bichon"],"gaddi":["indian"],"germanshepherd":[],"greyhound":["indian","italian"],"groenendael":[],"havanese":[],"hound":["afghan","basset","blood","english","ibizan","plott","walker"],"husky":[],"keeshond":[],"kelpie":[],"kombai":[],"komondor":[],"kuvasz":[],"labradoodle":[],"labrador":[],"leonberg":[],"lhasa":[],"malamute":[],"malinois":[],"maltese":[],"mastiff":["bull","english","indian","tibetan"],"mexicanhairless":[],"mix":[],"mountain":["bernese","swiss"],"mudhol":["indian"],"newfoundland":[],"otterhound":[],"ovcharka":["caucasian"],"papillon":[],"pariah":["indian"],"pekinese":[],"pembroke":[],"pinscher":["miniature"],"pitbull":[],"pointer":["german","germanlonghair"],"pomeranian":[],"poodle":["medium","miniature","standard","toy"],"pug":[],"puggle":[],"pyrenees":[],"rajapalayam":["indian"],"redbone":[],"retriever":["chesapeake","curly","flatcoated","golden"],"ridgeback":["rhodesian"],"rottweiler":[],"saluki":[],"samoyed":[],"schipperke":[],"schnauzer":["giant","miniature"],"segugio":["italian"],"setter":["english","gordon","irish"],"sharpei":[],"sheepdog":["english","indian","shetland"],"shiba":[],"shihtzu":[],"spaniel":["blenheim","brittany","cocker","irish","japanese","sussex","welsh"],"spitz":["indian","japanese"],"springer":["english"],"stbernard":[],"terrier":["american","australian","bedlington","border","cairn","dandie","fox","irish","kerryblue","lakeland","norfolk","norwich","patterdale","russell","scottish","sealyham","silky","tibetan","toy","welsh","westhighland","wheaten","yorkshire"],"tervuren":[],"vizsla":[],"waterdog":["spanish"],"weimaraner":[],"whippet":[],"wolfhound":["irish"]},"status":"success"} 
+ </msg>
+<msg time="2025-06-30T00:59:15.699196" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>dog_api</arg>
+<arg>/breeds/list/all</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.143620" elapsed="0.555655"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>${statusCode}</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.699952" elapsed="0.000580"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.701103" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.700742" elapsed="0.000425"/>
+</kw>
+<doc>Realiza chamada GET no endpoint /breeds/list/all</doc>
+<status status="PASS" start="2025-06-30T00:59:15.143239" elapsed="0.558088"/>
+</kw>
+<kw name="Então será verificado response contendo as informações sobre todas as raças de cachorro existentes na base" owner="thenSteps" source_name="${gherkin} será verificado response contendo as informações sobre todas as raças de cachorro existentes na base">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.703255" level="INFO">Length is 107.</msg>
+<arg>${response.json()}[message]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.702291" elapsed="0.001046"/>
+</kw>
+<kw name="Validate Json By Schema File" owner="JSONLibrary">
+<arg>${response.json()}</arg>
+<arg>data/schema/getAllBreeds.json</arg>
+<doc>Validate json object by json schema file.
+Arguments:
+    - json_object: json as a dictionary object.
+    - json_path: path to file with json schema</doc>
+<status status="PASS" start="2025-06-30T00:59:15.703519" elapsed="0.057428"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[status]</arg>
+<arg>success</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.761084" elapsed="0.000464"/>
+</kw>
+<doc>Realiza validação no response através de schemaFile que contém todas as raças de cachorro no sistema</doc>
+<status status="PASS" start="2025-06-30T00:59:15.701869" elapsed="0.059724"/>
+</kw>
+<status status="PASS" start="2025-06-30T00:59:15.142099" elapsed="0.619593"/>
+</test>
+<status status="PASS" start="2025-06-30T00:59:15.032223" elapsed="0.729729"/>
+</suite>
+<suite id="s1-s2" name="getBreedImage" source="/Users/amandaoliveira/Documents/Github/act-digital-c6Bank/test/api/getBreedImage.robot">
+<test id="s1-s2-t1" name="Cenário 1: Solicitar imagem de raça válida e existente na base | 200 OK" line="8">
+<kw name="Dado que é informado uma raça válida e que existe na base" owner="givenSteps" source_name="${gherkin} que é informado uma raça válida e que existe na base">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.764118" level="INFO">${statusCode} = 200</msg>
+<var>${statusCode}</var>
+<arg>200</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.764050" elapsed="0.000082"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.764243" level="INFO">${breed} = boxer</msg>
+<var>${breed}</var>
+<arg>boxer</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.764192" elapsed="0.000062"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.764406" level="INFO">${base_url} = https://dog.ceo/api</msg>
+<arg>${base_url}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.764313" elapsed="0.000112"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.764568" level="INFO">${statusCode} = 200</msg>
+<arg>${statusCode}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.764482" elapsed="0.000102"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:15.764719" level="INFO">${breed} = boxer</msg>
+<arg>${breed}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.764638" elapsed="0.000098"/>
+</kw>
+<status status="PASS" start="2025-06-30T00:59:15.763910" elapsed="0.000854"/>
+</kw>
+<kw name="Quando a chamada ao endpoint /breed/{breed}/images for realizada" owner="whenSteps" source_name="${gherkin} a chamada ao endpoint /breed/{breed}/images for realizada">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-30T00:59:15.765127" level="INFO">Creating Session using : alias=dog_api, url=https://dog.ceo/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>dog_api</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-30T00:59:15.764981" elapsed="0.000279"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-06-30T00:59:16.202156" level="INFO">GET Request : url=https://dog.ceo/api/breed/boxer/images 
+ path_url=/api/breed/boxer/images 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-30T00:59:16.202463" level="INFO">GET Response : url=https://dog.ceo/api/breed/boxer/images 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 30 Jun 2025 03:59:16 GMT', 'Content-Type': 'application/json', 'Content-Length': '621', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'X-Powered-By': 'PHP/8.1.32', 'Access-Control-Allow-Origin': '*', 'Content-Encoding': 'gzip', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'Cache-Control': 'max-age=1800', 'X-Cache-Age': '14063', 'X-Cache-Hits': '32', 'X-Cache': 'HIT', 'Accept-Ranges': 'bytes', 'Age': '0', 'Vary': 'Accept-Encoding', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Cf-Cache-Status': 'DYNAMIC', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ir5yf8hHyjotWcdGB6YGNpJfMTQmmdb15UkuPBM5%2F5xCam5PCSrr%2BTvkddAf%2FuhlSBKgYtArA7117%2Bmn4icvNdiDDwhpE2s%3D"}]}', 'CF-RAY': '957abffcac07cad4-GIG', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"message":["https:\/\/images.dog.ceo\/breeds\/boxer\/28082007167-min.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/IMG_0002.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/IMG_3394.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1003.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_10229.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1031.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1072.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_10774.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_10901.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_10939.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11001.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11032.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1104.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11074.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11122.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11154.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1159.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11616.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11687.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_117.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11807.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_11875.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_122.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_12232.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_125.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_12738.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_12739.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_13340.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_13526.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1353.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1355.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1357.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1367.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_13738.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_13839.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_13898.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_14074.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1410.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_14112.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1418.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_14659.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_14719.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_149.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1511.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_15432.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1560.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_15702.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1571.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1575.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1619.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1626.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1654.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1672.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1675.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1690.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1748.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1757.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1775.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1859.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_1956.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2007.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2056.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2106.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2355.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2360.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2367.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2432.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2482.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2526.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2608.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2653.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2670.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_268.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2718.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2723.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2740.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2741.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2791.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2796.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2815.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2831.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2917.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_2953.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3028.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3162.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3236.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3258.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3269.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3365.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3395.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3400.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3412.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3547.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3557.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3669.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_3899.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_395.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4002.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4042.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4076.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4119.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4158.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4440.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4486.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4681.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4730.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_485.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4865.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_4989.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5043.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_522.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5266.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_530.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5301.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_540.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5423.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5599.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5614.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5753.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_5977.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_6008.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_625.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_6295.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_6418.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_6429.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_6583.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_69.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_7259.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_7319.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_7431.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_7456.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_770.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_78.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_7853.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_813.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_836.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_849.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_8739.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_8969.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_9045.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_9076.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_922.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_926.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_931.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_959.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_9724.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_9778.jpg","https:\/\/images.dog.ceo\/breeds\/boxer\/n02108089_995.jpg"],"status":"success"} 
+ </msg>
+<msg time="2025-06-30T00:59:16.203366" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>dog_api</arg>
+<arg>/breed/${breed}/images</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-30T00:59:15.765326" elapsed="0.438106"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>${statusCode}</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.203983" elapsed="0.000585"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.205464" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.204866" elapsed="0.000685"/>
+</kw>
+<doc>Realiza chamada GET no endpoint /breed/{breed}/images</doc>
+<status status="PASS" start="2025-06-30T00:59:15.764863" elapsed="0.440859"/>
+</kw>
+<kw name="Então será verificado response contendo uma ou mais imagens da raça informada" owner="thenSteps" source_name="${gherkin} será verificado response contendo uma ou mais imagens da raça informada">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.207841" level="INFO">Length is 149.</msg>
+<arg>${response.json()}[message]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.206761" elapsed="0.001157"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.json()}[message][0]</arg>
+<arg>https://images.dog.ceo/breeds/</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.208121" elapsed="0.000896"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.json()}[message][0]</arg>
+<arg>.jpg</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.209202" elapsed="0.001261"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.json()}[message][0]</arg>
+<arg>${breed}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.210775" elapsed="0.000855"/>
+</kw>
+<kw name="Validate Json By Schema File" owner="JSONLibrary">
+<arg>${response.json()}</arg>
+<arg>data/schema/getBreedImage.json</arg>
+<doc>Validate json object by json schema file.
+Arguments:
+    - json_object: json as a dictionary object.
+    - json_path: path to file with json schema</doc>
+<status status="PASS" start="2025-06-30T00:59:16.211788" elapsed="0.005682"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[status]</arg>
+<arg>success</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.217645" elapsed="0.000670"/>
+</kw>
+<doc>Realiza validação no response através de schemaFile que contém imagem da raça informada</doc>
+<status status="PASS" start="2025-06-30T00:59:16.206276" elapsed="0.012125"/>
+</kw>
+<status status="PASS" start="2025-06-30T00:59:15.763655" elapsed="0.454941"/>
+</test>
+<status status="PASS" start="2025-06-30T00:59:15.762159" elapsed="0.456773"/>
+</suite>
+<suite id="s1-s3" name="getBreedImageRandom" source="/Users/amandaoliveira/Documents/Github/act-digital-c6Bank/test/api/getBreedImageRandom.robot">
+<test id="s1-s3-t1" name="Cenário 1: Solicitar imagem aleatória de uma raça válida e existente na base | 200 OK" line="8">
+<kw name="Dado que é informado uma raça aleatória, válida e que existe na base" owner="givenSteps" source_name="${gherkin} que é informado uma raça aleatória, válida e que existe na base">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.223315" level="INFO">${statusCode} = 200</msg>
+<var>${statusCode}</var>
+<arg>200</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.223181" elapsed="0.000162"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.223644" level="INFO">${base_url} = https://dog.ceo/api</msg>
+<arg>${base_url}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.223471" elapsed="0.000204"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.223919" level="INFO">${statusCode} = 200</msg>
+<arg>${statusCode}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.223779" elapsed="0.000169"/>
+</kw>
+<status status="PASS" start="2025-06-30T00:59:16.222883" elapsed="0.001110"/>
+</kw>
+<kw name="Quando a chamada ao endpoint /breeds/image/random for realizada" owner="whenSteps" source_name="${gherkin} a chamada ao endpoint /breeds/image/random for realizada">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-30T00:59:16.224750" level="INFO">Creating Session using : alias=dog_api, url=https://dog.ceo/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>dog_api</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-30T00:59:16.224488" elapsed="0.000462"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-06-30T00:59:16.670649" level="INFO">GET Request : url=https://dog.ceo/api/breeds/image/random 
+ path_url=/api/breeds/image/random 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-06-30T00:59:16.670877" level="INFO">GET Response : url=https://dog.ceo/api/breeds/image/random 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 30 Jun 2025 03:59:16 GMT', 'Content-Type': 'application/json', 'Content-Length': '109', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'X-Powered-By': 'PHP/8.1.32', 'Cache-Control': 'no-cache, private', 'Access-Control-Allow-Origin': '*', 'Content-Encoding': 'gzip', 'Via': '1.1 varnish (Varnish/6.3), 1.1 varnish (Varnish/6.3)', 'X-Cache-Hits': '0', 'X-Cache': 'MISS', 'Accept-Ranges': 'bytes', 'Age': '0', 'Vary': 'Accept-Encoding', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Cf-Cache-Status': 'DYNAMIC', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=xU2wiYxb%2BmOHm5TRp4zRufQd11d%2BdYbRseBWawhRyJTTaVkTyoIwaGtHl2UNBgGImo9MrQD89gknOeC%2F3NY%2F%2BKxaAXq7eHM%3D"}]}', 'CF-RAY': '957abfff9d4dbdb3-GIG', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"message":"https:\/\/images.dog.ceo\/breeds\/hound-ibizan\/n02091244_2601.jpg","status":"success"} 
+ </msg>
+<msg time="2025-06-30T00:59:16.671183" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>dog_api</arg>
+<arg>/breeds/image/random</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.225080" elapsed="0.446164"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>${statusCode}</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.671687" elapsed="0.000541"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.673109" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.672539" elapsed="0.000654"/>
+</kw>
+<doc>Realiza chamada GET no endpoint /breeds/image/random</doc>
+<status status="PASS" start="2025-06-30T00:59:16.224212" elapsed="0.449126"/>
+</kw>
+<kw name="Então será verificado response contendo uma imagem da raça informada aleatória" owner="thenSteps" source_name="${gherkin} será verificado response contendo uma imagem da raça informada aleatória">
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.675262" level="INFO">Length is 61.</msg>
+<arg>${response.json()}[message]</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.674386" elapsed="0.000946"/>
+</kw>
+<kw name="Should Contain X Times" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.676048" level="INFO">Item found from container 1 time.</msg>
+<arg>${response.json()}[message]</arg>
+<arg>.jpg</arg>
+<arg>1</arg>
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.675476" elapsed="0.000692"/>
+</kw>
+<kw name="Should Contain X Times" owner="BuiltIn">
+<msg time="2025-06-30T00:59:16.676861" level="INFO">Item found from container 1 time.</msg>
+<arg>${response.json()}[message]</arg>
+<arg>https://images.dog.ceo/breeds/</arg>
+<arg>1</arg>
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.676318" elapsed="0.000622"/>
+</kw>
+<kw name="Validate Json By Schema File" owner="JSONLibrary">
+<arg>${response.json()}</arg>
+<arg>data/schema/getBreedImageRandom.json</arg>
+<doc>Validate json object by json schema file.
+Arguments:
+    - json_object: json as a dictionary object.
+    - json_path: path to file with json schema</doc>
+<status status="PASS" start="2025-06-30T00:59:16.677098" elapsed="0.003057"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[status]</arg>
+<arg>success</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-06-30T00:59:16.680315" elapsed="0.000523"/>
+</kw>
+<doc>Realiza validação no response através de schemaFile de uma imagem fornecida e status sucesso</doc>
+<status status="PASS" start="2025-06-30T00:59:16.673754" elapsed="0.007148"/>
+</kw>
+<status status="PASS" start="2025-06-30T00:59:16.222331" elapsed="0.458695"/>
+</test>
+<status status="PASS" start="2025-06-30T00:59:16.219359" elapsed="0.461884"/>
+</suite>
+<status status="PASS" start="2025-06-30T00:59:15.024715" elapsed="1.656878"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Api">Api</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="getAllBreeds">Api.getAllBreeds</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="getBreedImage">Api.getBreedImage</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="getBreedImageRandom">Api.getBreedImageRandom</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
