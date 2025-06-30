@@ -15,6 +15,12 @@ Este projeto utiliza o **Robot Framework** para automação de testes, com foco 
 - `pip` instalado
 
 ### 2. Instalar o Robot Framework
-
 ```bash
 pip install robotframework
+```
+
+### 3. Para executar testes em ambiente local e guardar log na pasta logs
+
+```bash
+robot --outputdir logs test/api 
+```
