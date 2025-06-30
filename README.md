@@ -24,3 +24,7 @@ pip install robotframework
 ```bash
 robot --outputdir logs test/api 
 ```
+### 4. Para executar testes via pipeline no GitHub Actions 
+# 1. A pipeline é gatilhada quando é realizado um Pull Request para a branch main
+# 2. Após o PR ser mergeado, o workflow é iniciado automaticamente pelo GitHub, sendo possível acompanhar através da interface do Github no menu Actions 
+# 3. O workflow é executado e ao clicar em seu nome, é possível ver todos os stages realizados assim como os artefatos da execução armazenados.
