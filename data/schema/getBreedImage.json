@@ -1,0 +1,20 @@
+{
+    "description": "Schema para validar que é retornada no mínimo 1 imagem para a raça informada",
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+            "type": "string"
+        }
+      },
+      "status": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "message",
+      "status"
+    ]
+  }
