@@ -1,7 +1,3 @@
----
-title: Projeto de Testes Automatizados com Robot Framework
----
-
 # 🧪 Projeto de Testes Automatizados com Robot Framework
 
 Este projeto utiliza o **Robot Framework** para automação de testes, com foco em APIs. As bibliotecas utilizadas incluem:
@@ -22,8 +18,3 @@ Este projeto utiliza o **Robot Framework** para automação de testes, com foco 
 
 ```bash
 pip install robotframework
-
-### 3. Para executar testes em ambiente local e guardar log na pasta logs
-
-```bash
-robot --outputdir logs test/api 
